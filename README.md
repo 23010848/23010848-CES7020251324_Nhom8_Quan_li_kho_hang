@@ -1,7 +1,9 @@
 Tên đề tài : Xây dựng phần mềm quản lí kho hàng 
 1. Mô phỏng hệ thống (dự án)
  ![image](https://github.com/user-attachments/assets/c2c493ab-cc8d-40d1-b423-8a2e008d202a)
+
 Phần mềm quản lý kho hàng là một hệ thống gồm nhiều chức năng hỗ trợ quản lý xuất - nhập hàng, sản phẩm, danh mục và tài khoản người dùng. Dưới đây là mô phỏng tổng thể của hệ thống:
+
 1.1 Kiến trúc hệ thống
 Tầng giao diện người dùng: Giao diện đăng nhập, giao diện chính (admin và nhân viên), quản lý sản phẩm, danh mục, phiếu nhập, phiếu xuất, thống kê doanh thu.
 Tầng xử lý nghiệp vụ: Kiểm tra đăng nhập, xử lý CRUD cho danh mục/sản phẩm/phiếu/tài khoản, tính toán thống kê.
