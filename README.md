@@ -4,41 +4,59 @@ Tên đề tài : Xây dựng phần mềm quản lí kho hàng
 
 Phần mềm quản lý kho hàng là một hệ thống gồm nhiều chức năng hỗ trợ quản lý xuất - nhập hàng, sản phẩm, danh mục và tài khoản người dùng. Dưới đây là mô phỏng tổng thể của hệ thống:
 
-1.1 Kiến trúc hệ thống
-Tầng giao diện người dùng: Giao diện đăng nhập, giao diện chính (admin và nhân viên), quản lý sản phẩm, danh mục, phiếu nhập, phiếu xuất, thống kê doanh thu.
+1. Mở đầu
+Kính thưa thầy và các bạn,
 
-Tầng xử lý nghiệp vụ: Kiểm tra đăng nhập, xử lý CRUD cho danh mục/sản phẩm/phiếu/tài khoản, tính toán thống kê.
+Trong bối cảnh chuyển đổi số đang diễn ra mạnh mẽ, việc ứng dụng CNTT vào quản lý kho hàng là xu hướng tất yếu. Với mục tiêu vận dụng kiến thức đã học vào một sản phẩm thực tiễn, nhóm 8 chúng em đã lựa chọn đề tài "Xây dựng phần mềm quản lý kho hàng bằng Java", dưới sự hướng dẫn của thầy Vũ Quang Dũng.
 
-Tầng cơ sở dữ liệu:
+2. Kiến trúc hệ thống
+![image](https://github.com/user-attachments/assets/e7cf94f7-1583-463b-9c6e-ae2a757f6b1f)
+![image](https://github.com/user-attachments/assets/dd8a2718-8a98-4be0-af32-21b5a1fa4513)
+![image](https://github.com/user-attachments/assets/898b0b1d-5818-4a4d-bc75-73661224bd17)
 
-Bảng User: lưu thông tin người dùng, quyền truy cập
 
-Bảng SanPham, DanhMuc, PhieuNhap, PhieuXuat: quản lý kho hàng và phiếu giao dịch
 
-Dữ liệu kết nối với các chức năng báo cáo và thống kê
+Phần mềm được xây dựng theo mô hình 3 lớp (3-tier) gồm:
 
-2. Đặc tả tính sử dụng, chức năng người sử dụng
+🔷 Tầng giao diện người dùng (UI):
+Gồm các màn hình như đăng nhập, giao diện chính cho admin và nhân viên, quản lý sản phẩm, danh mục, phiếu nhập, phiếu xuất và thống kê doanh thu. Giao diện thiết kế đơn giản, dễ sử dụng.
 
-Tính sử dụng (Usability):
+🔷 Tầng xử lý nghiệp vụ (Business Logic):
+Đảm nhận các chức năng xử lý chính như đăng nhập, phân quyền, CRUD dữ liệu, tính toán thống kê...
 
-Giao diện phần mềm thân thiện, dễ sử dụng cho cả người quản trị và nhân viên.
+🔷 Tầng cơ sở dữ liệu (Database):
+Các bảng chính bao gồm:
 
-Các chức năng được phân tách rõ ràng, dễ hiểu, giúp người dùng thao tác nhanh chóng.
+User: lưu thông tin người dùng
 
-Chức năng người sử dụng:
+SanPham, DanhMuc: quản lý sản phẩm theo từng danh mục
 
-Quản trị viên (Admin):
+PhieuNhap, PhieuXuat: quản lý các giao dịch nhập – xuất hàng
 
-Đăng nhập / Đăng xuất
+Các bảng này liên kết chặt chẽ với các chức năng báo cáo và thống kê.
 
-Quản lý tài khoản người dùng
+3. Tính sử dụng và chức năng người dùng
+🔹 Tính sử dụng (Usability):
 
-Quản lý danh mục, sản phẩm, phiếu nhập, phiếu xuất
+Giao diện thân thiện, rõ ràng.
+
+Các chức năng phân tách logic, giúp thao tác nhanh chóng.
+
+Giao diện phù hợp cho cả người quản trị và nhân viên.
+
+🔹 Phân quyền chức năng:
+
+Admin có thể:
+
+Đăng nhập/đăng xuất
+
+Quản lý tài khoản, danh mục, sản phẩm, phiếu nhập/xuất
 
 Thống kê doanh thu
-Nhân viên:
 
-Đăng nhập / Đăng xuất
+Nhân viên có thể:
+
+Đăng nhập/đăng xuất
 
 Quản lý danh mục, sản phẩm
 
@@ -46,61 +64,90 @@ Tạo phiếu nhập, xuất
 
 Xem thống kê doanh thu
 
-3. Mô tả quy trình đánh giá
+4. Quy trình kiểm thử và đánh giá
+🔍 Phương pháp đánh giá:
 
-Hình thức đánh giá: Thông qua test case và thử nghiệm chức năng thực tế.
+Sử dụng test case cụ thể để kiểm tra từng chức năng.
 
-Người thực hiện: Các thành viên nhóm phụ trách từng chức năng cụ thể.
+Mỗi thành viên phụ trách một phần chức năng thực hiện test tương ứng.
 
-Nội dung kiểm thử gồm:
+🧪 Nội dung kiểm thử:
 
-Đăng nhập
+Đăng nhập hệ thống
 
-Thêm/sửa/xóa danh mục, sản phẩm
+Thêm/sửa/xóa danh mục và sản phẩm
 
-Thao tác với phiếu nhập, phiếu xuất
+Quản lý phiếu nhập/xuất
 
 Quản lý tài khoản
 
 Thống kê doanh thu
 
-Xuất file Excel
+Xuất dữ liệu ra Excel
 
-Kết quả: Tất cả test case chính đều thành công, giao diện hoạt động ổn định.
+✅ Kết quả:
 
-4.ác thay đổi cần thiết trong thiết kế giao diện và chương trình
+Tất cả test case đều đạt kết quả thành công, phần mềm hoạt động ổn định.
 
-4.1 Giao diện
+5. Góp ý & cải tiến cần thiết
+5.1 Giao diện:
+Một số bố cục chưa tối ưu, còn đơn điệu.
 
-Một số giao diện còn đơn giản, bố cục chưa hợp lý.
+Cần bổ sung thêm biểu tượng, màu sắc để cải thiện trải nghiệm người dùng.
 
-Nên bổ sung thêm màu sắc, biểu tượng giúp người dùng dễ thao tác hơn.
+Tách rõ giao diện admin và nhân viên để tránh nhầm lẫn.
 
-Tách rõ phần quản trị và nhân viên, tránh nhầm lẫn.
+5.2 Về chương trình:
+Cần validate dữ liệu đầu vào kỹ hơn để tránh lỗi.
 
-4.2 Chương trình
+Tối ưu hiệu năng khi làm việc với danh sách lớn hoặc nhập hàng loạt.
 
-Bổ sung kiểm tra dữ liệu đầu vào (ràng buộc đầu vào, validate form).
+Tích hợp tính năng gửi báo cáo qua email để tự động hóa quy trình.
 
-Tối ưu mã nguồn xử lý khi danh sách lớn (nhập hàng loạt sản phẩm).
+6. Kết quả đạt được
+✅ Nhóm đã:
 
-Hoàn thiện tính năng gửi báo cáo qua email như đã đề xuất. 
+Nắm vững quy trình phát triển phần mềm qua môn Kỹ thuật Phần mềm.
 
-5.Kết luận
+Hiểu và thực hành thiết kế hệ thống theo mô hình UML.
 
-Đề tài đã hoàn thiện với đầy đủ các chức năng cơ bản của một hệ thống quản lý kho.
+Thiết kế cơ sở dữ liệu logic, phù hợp với thực tế quản lý kho.
 
-Hệ thống giúp:
+Xây dựng phần mềm hoàn chỉnh với giao diện và các chức năng thiết yếu.
 
-Giảm thiểu thời gian thao tác thủ công
+📈 Phần mềm hỗ trợ:
 
-Tăng độ chính xác trong theo dõi hàng hóa
+Giảm thời gian nhập liệu thủ công
 
-Hỗ trợ báo cáo và thống kê theo kỳ
+Quản lý sản phẩm, danh mục, xuất nhập hàng chính xác
 
-Nhóm đã áp dụng thành công kiến thức từ môn Kỹ thuật Phần mềm để xây dựng ứng dụng thực tế.
+Thống kê doanh thu rõ ràng theo từng kỳ
 
-Tuy nhiên, do thời gian có hạn và nhóm chưa có kinh nghiệm chuyên sâu, một số tính năng vẫn cần hoàn thiện thêm.
+7. Hạn chế & hướng phát triển
+❌ Hạn chế:
 
-Trong tương lai, nhóm sẽ phát triển thêm: bảo mật, giao diện chuyên nghiệp hơn và mở rộng tính năng tự động hoá báo cáo.
+Giao diện còn đơn giản
+
+Một số tính năng mới chỉ dừng ở mức demo
+
+Thiếu tính năng nâng cao như cảnh báo tồn kho thấp
+
+🚀 Hướng phát triển tương lai:
+
+Hoàn thiện giao diện chuyên nghiệp hơn
+
+Tích hợp chức năng gửi báo cáo định kỳ qua email
+
+Thêm tính năng bảo mật cao hơn (xác thực hai lớp, mã hóa mật khẩu)
+
+Mở rộng quy mô: hỗ trợ nhiều chi nhánh/kho hàng
+
+Hướng đến triển khai thực tế tại các cơ sở kinh doanh vừa và nhỏ
+
+8. Lời kết
+Đề tài đã giúp nhóm chúng em không chỉ củng cố kiến thức lý thuyết mà còn phát triển kỹ năng làm việc nhóm, lập trình hướng đối tượng, thiết kế hệ thống và kiểm thử phần mềm.
+
+Chúng em xin gửi lời cảm ơn chân thành đến thầy Vũ Quang Dũng đã tận tình hướng dẫn, và kính mong nhận được góp ý từ thầy và các bạn để nhóm hoàn thiện sản phẩm hơn trong tương lai.
+
+Xin trân trọng cảm ơn!
 
